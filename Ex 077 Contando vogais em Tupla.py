@@ -11,3 +11,4 @@ for c in tupla:
         a = v.index('a')
         print(a)
     print(v)
+print('\033[1;31mcodigo ainda em desenvolvimento\033[m')
