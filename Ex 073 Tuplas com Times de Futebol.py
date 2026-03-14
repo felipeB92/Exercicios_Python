@@ -1,0 +1,5 @@
+t =('Flamengo', 'Palmeiras', 'Cruzeiro', 'Mirassol', 'Fluminense', 'Botafogo', 'Bahia', 'São Paulo', 'Grêmio', 'Red Bull Bragantino', 'Atlético-MG', 'Santos', 'Corinthians', 'Vasco', 'Vitória', 'Internacional', 'Ceará', 'Fortaleza', 'Juventude', 'Sport')
+print (f'os 5 primeiros colocados são{t[0:5]}')
+print (f'os 4 ultimos são {t[-4:]}')
+print (f'a tabela em ordem alfabetica é {sorted(t)}')
+print (f' não tem chapecoense porem o corinthians esta na {t.index("Corinthians")}º posição')

@@ -1,0 +1,7 @@
+OX = int (input('digite a coordenada X do mundo externo'))
+OY = int (input('Agora digite as coordenadas Y'))
+OZ = int (input('por fim digite a coordenada Z'))
+NX = (OX*8)
+NY = (OY)
+NZ = (OZ*8)
+print ('seu portal no nether vai dar nas coordenadas X{} Y{} Z{}'.format (NX,NY,NZ))

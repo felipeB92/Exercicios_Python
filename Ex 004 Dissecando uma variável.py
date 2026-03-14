@@ -1,0 +1,6 @@
+n = input('digite alguma coisa: ')
+print (type(n))
+print ('é um numero?' ,'\033[1;32m',n.isalnum(),'\033[m')
+print ('uma letra?','\033[1;33m',n.isalpha(),'\033[m')
+print ('esta em minusculo','\033[1;34m',n.islower(),'\033[m')
+print ('esta em maiusculo','\033[7m',n.isupper(),'\033[m')

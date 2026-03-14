@@ -1,0 +1,6 @@
+frase = input('digite uma frase: ')
+l = frase.lower()
+a = l.count('a')
+pa = l.find('a')
+ua = l.rfind('a')
+print ('sua frase tem {} letras A a primeira esta na posição {} e a ultima na {}'.format(a,pa,ua))
