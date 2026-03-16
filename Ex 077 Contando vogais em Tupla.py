@@ -1,14 +1,6 @@
 tupla =('macaco',"sol", "livro", "computador", "janela", "correr", "nuvem", "teclado", "porta", "caminho", "vento")
-v = ''
-a = ''
-e = ''
-i = ''
-o = ''
-u = ''
 for c in tupla:
-    v = list(c)
-    if 'a' in v:
-        a = v.index('a')
-        print(a)
-    print(v)
-print('\033[1;31mcodigo ainda em desenvolvimento\033[m')
+    print(f'\n na palavra \033[1m{c}\033[m temos as vogais:', end=' ')
+    for l in c:
+        if l in 'aeiou':
+            print(l, end=' ')
