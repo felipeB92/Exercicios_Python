@@ -23,3 +23,4 @@ def diminuir(num,porcentagem,moeda=False):
     if moeda == True:
         return ex111P.moeda.moeda(num - (num/100 * porcentagem))
     return num - (num/100 * porcentagem)
+

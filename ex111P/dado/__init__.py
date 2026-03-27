@@ -23,3 +23,14 @@ def diminuir(num,porcentagem,moeda=False):
     if moeda == True:
         return ex111P.moeda.moeda(num - (num/100 * porcentagem))
     return num - (num/100 * porcentagem)
+
+def leiadin():
+    while True:
+        n = input('Digite o preço: R$').replace(',', '.')
+        c = (n.replace(".", ""))
+        if c.isnumeric():
+            b = float(n)
+            break
+        else:
+            print(f'\033[1;31m {n} é um valor invalido\033[m')
+    return b
