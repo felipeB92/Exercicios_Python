@@ -1,10 +1,11 @@
-while True:
-    n = input('Digite o preço: R$').replace(',','.')
-    c = (n.replace(".",""))
-    if c.isnumeric():
-        b = float(n)
-        break
-    else:
-        print(f'\033[1;31m {n} é um valor invalido\033[m')
+from cores import *
+def menu():
+    print('BEM VINDO AO BANCO NOJEIRA':^'-')
+    men =['Saldo','Saque','Deposito','Sair']
+    p = 1
+    for c in men:
+        colorir(f'[{p}] - ',Estilo.NEGRITO,True)
+        print(f'{c}')
+        p += 1
 
-print(b)
+menu()
