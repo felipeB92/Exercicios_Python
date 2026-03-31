@@ -1,20 +1,15 @@
 from CEMOD import *
-from time import sleep
+print('em processo digite',)
+print('\033[1;32mconta 0 senha 123\033[m ou',end=' ')
+print('\033[1;32mconta 1 senha 321\033[m')
+dados = "cadastros.json"
+lista = carregar_dados(dados)
 
-saldo = 1000
-q = 0
-
-while q != 4:
-    q = menu()
-    if q == 1:
-        Saldo(saldo)
-    elif q == 2:
-            saldo = Saque(saldo)
-    elif q == 3:
-        saldo = DEPOSITO(saldo)
-    elif q == 4:
-        print('operaçao finalizada')
-    else:
-        sleep(0.5)
-        print('\033[1;31m opção invalida\033[m')
+Con = int(login())
+if Con == 999:
+    print('Encerrando')
+else:
+    saldo = int(lista[Con]['saldo'])
+    q = 0
+    select(q,saldo)
 print('obrigado por ultilizar o banco nojeira')
