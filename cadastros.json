@@ -1,12 +1,22 @@
 [
     {
+        "nome": "Teste",
+        "senha": 0,
+        "saldo": 0
+    },
+    {
         "nome": "ALICE",
         "senha": 123,
-        "saldo": 1000
+        "saldo": 5050
     },
     {
         "nome": "DIEGO",
         "senha": 321,
         "saldo": 1500
+    },
+    {
+        "nome": "ANDRE",
+        "senha": 111,
+        "saldo": 500
     }
 ]

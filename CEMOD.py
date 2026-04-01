@@ -53,16 +53,18 @@ def select(q,saldo):
     while q != 4:
         q = menu()
         if q == 1:
-            Saldo(saldo)
+            r = Saldo(saldo)
         elif q == 2:
-            saldo = Saque(saldo)
+            r = saldo = Saque(saldo)
         elif q == 3:
-            saldo = DEPOSITO(saldo)
+            r = saldo = DEPOSITO(saldo)
         elif q == 4:
             print('operaçao finalizada')
+            return saldo
         else:
             sleep(0.5)
             print('\033[1;31m opção invalida\033[m')
+    return r
 
 def Saldo(n):
     sleep(0.5)
@@ -115,16 +117,21 @@ def login():
     print(f'{36*"-"}')
     print(f'{5*' '}BEM VINDO AO BANCO NOJEIRA{5*' '}')
     print(f'{36*"-"}')
+    print('digite sua conta e senha ou \n0 em conta para cadastrar nova conta')
+    print()
     b = 0
     dados = "cadastros.json"
     lista = carregar_dados(dados)
     while True:
-        c=leiaInt('Numero da conta: ')
+        c=leiaInt('\033[1mNumero da conta\033[m: ')
         if c > (len(lista)-1) or c < 0:
             print('\033[1;31m   CONTA INVALIDA \033[m')
+        elif c == 0:
+            cadastro()
+            return 0
         else:
             print(f'NOME:{lista[c]['nome']}')
-            senha = leiaInt('Digite sua senha: ')
+            senha = leiaInt('\033[1mDigite sua senha:\033[m ')
             if senha == (lista[c]['senha']):
                 print(f'\033[1;32m    Entrando\033[m')
                 return c
@@ -135,6 +142,23 @@ def login():
                 if b == 3:
                     print(f'\033[1;31m Cartão Bloqueado')
                     return 999
+
+def cadastro():
+    dados = "cadastros.json"
+    lista = carregar_dados(dados)
+    temp = {}
+    print(f'{40*"-"}')
+    print(f'{10*" "}CADASTRO NOVA CONTA')
+    print(f'{40*"-"}')
+    temp['nome'] = input('Nome: ').upper()
+    temp['senha'] = leiaInt('Senha: ')
+    temp['saldo'] = leiaInt('valor do deposito inicial : R$')
+    lista.append(temp)
+    salvar_dados("cadastros.json",lista)
+    print(f'numero da sua conta é \033[1;32m{len(lista)-1}\033[m')
+    return 0
+
+
 
 
 
