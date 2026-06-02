@@ -1,6 +1,3 @@
-from sqlparse.utils import offset
-
-
 def eint(n):
     while True:
         b = input(f'{n}')
@@ -19,11 +16,23 @@ def SouN(n):
             return 'N'
 
 
+def exibir_cabecalho():
+    largura = 50
+    titulo = "CRIADOR DE CODIGOS PERSONAGENS"
+    autor = "Por Felipe B. Silva"
+
+    print("┌" + "─" * (largura - 2) + "┐")
+    print("│" + titulo.center(largura - 2) + "│")
+    print("│" + autor.center(largura - 2) + "│")
+    print("└" + "─" * (largura - 2) + "┘")
+
+
 jogador = ['idle','Attack1','Attack2','Attack3','walk','run','runattack','grabattack','grabattack2','special','special2']
 inimigo = ['idle','Attack1','walk',]
 Boss = ['Attack1','Attack2','Attack3','idle','walk','special','special2']
 tipo = 0
 pasta = 'data'
+exibir_cabecalho()
 print('[1]jogador\n[2]inimigo\n[3]Boss')
 while tipo != 1 and tipo != 2 and tipo != 3:
     tipo = eint('Qual o tipo Personagen: ')
@@ -43,7 +52,7 @@ Health	= eint('quantidade de Vida: ')
 Speed = eint('Velocidade: ')
 Mp = eint('Estamina: ')
 offsetX = eint('Offset Padrão X: ')
-offsetY = eint('Offset Padrão Y:')
+offsetY = eint('Offset Padrão Y: ')
 delay = eint('delay padrão das animações: ')
 bbox = (f'    bbox{3*' '}{offsetX-10} {offsetY-70} {20} {70}')
 idle = 0
@@ -57,7 +66,6 @@ grabattack = 0
 grabattack2 = 0
 special = 0
 special2 = 0
-arc = ' '
 RAN = 0
 
 for c in lista:
@@ -121,6 +129,7 @@ print()
 print()
 
 for c in lista:
+    arc = 'idle'
     loop = 0
     if c == 'idle':
         arq = 'idle'
